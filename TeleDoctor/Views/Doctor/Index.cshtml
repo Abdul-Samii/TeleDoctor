@@ -1,0 +1,27 @@
+﻿@{
+  var data = new[]
+      {
+    new { name = "Klaren Doe", profession = "Cardiologist", img = "doctor.jpg" },
+    new { name = "Joe Hoa", profession = "Eye Care", img = "doctor.jpg" },
+    new { name = "Kevin Wam", profession = "Cardiologist", img = "doctor.jpg"},
+    new { name = "Klaren Doe", profession = "Cardiologist", img = "doctor.jpg" },
+    new { name = "Joe Hoa", profession = "Eye Care", img = "doctor.jpg" },
+    new { name = "Kevin Wam", profession = "Cardiologist", img = "doctor.jpg"}
+  };
+}
+
+<div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;">
+  @foreach (var item in data)
+  {
+    <div class="w-75">
+      <!-- Width is calculated dynamically to accommodate 4 cards with gap -->
+      <div style="position: relative; overflow: hidden; border: 1px solid #ced4da; border-radius: 15px;">
+        <img src="~/images/@item.img" style="object-fit: cover; width: 100%; height: 0%; border-bottom-left-radius: 15px; border-bottom-right-radius: 15px;" class="rounded-circle" />
+        <div style="padding: 10px; background-color: #f8f9fa; border-top: 1px solid #ced4da; border-bottom-left-radius: 15px; border-bottom-right-radius: 15px;">
+          <h5 style="margin-bottom: 5px;">@item.name</h5>
+          <p style="margin-bottom: 0;">@item.profession</p>
+        </div>
+      </div>
+    </div>
+  }
+</div>
